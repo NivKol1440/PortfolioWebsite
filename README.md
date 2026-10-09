@@ -19,8 +19,13 @@ Portfolio website for **Nivedh Koloth Shijan** — built with Flask, featuring a
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-pip install flask pillow pillow-heif
+pip install -r requirements.txt
 python app.py
 ```
 
 Visit `http://127.0.0.1:5000`
+
+## Deploy to Render
+
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `gunicorn app:app`
