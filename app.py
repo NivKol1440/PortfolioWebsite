@@ -70,7 +70,7 @@ def serve_photo(filename):
 @app.route('/api/bmw-theme-images')
 def bmw_theme_images():
     """Return a JSON list of BMW theme image filenames."""
-    bmw_dir = os.path.join(app.static_folder, 'images', 'BMW_theme')
+    bmw_dir = os.path.join(app.static_folder, 'images', 'BMW_Theme')
     allowed_ext = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
     images = []
     if os.path.isdir(bmw_dir):

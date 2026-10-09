@@ -183,7 +183,7 @@
 
     <!-- ═══════ BIRTHDAY MUSIC AUDIO ═══════ -->
     <audio id="birthdayAudio" loop preload="auto">
-        <source src="{{ url_for('static', filename='music/atlasaudio-birthday-606219.mp3') }}" type="audio/mpeg">
+        <source src="{{ url_for('static', filename='Music/atlasaudio-birthday-606219.mp3') }}" type="audio/mpeg">
     </audio>
 
     <!-- ═══════ MUSIC CONTROL BUTTON ═══════ -->
@@ -353,7 +353,7 @@
                 images.forEach((img, i) => {
                     const slide = document.createElement('div');
                     slide.className = 'bmw-slide' + (i === 0 ? ' active' : '');
-                    slide.style.backgroundImage = `url('/static/images/BMW_theme/${encodeURIComponent(img)}')`;
+                    slide.style.backgroundImage = `url('/static/images/BMW_Theme/${encodeURIComponent(img)}')`;
                     container.appendChild(slide);
                 });
 
