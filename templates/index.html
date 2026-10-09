@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivedh Koloth Shijan — Portfolio</title>
+    <meta name="description" content="Portfolio of Nivedh Koloth Shijan — Developer, Creator, Innovator.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- ═══════ AMBIENT BACKGROUND CANVAS ═══════ -->
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- ═══════ FLOATING PARTICLES ═══════ -->
+    <div id="particles"></div>
+
+    <!-- ═══════ TAB CONTENT PAGES ═══════ -->
+
+    <!-- HOME / PORTFOLIO PAGE -->
+    <div class="tab-page {% if active_tab == 'home' %}active{% endif %}" id="page-home">
+        <div class="portfolio-hero">
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <div class="hero-badge">👋 Welcome</div>
+                <h1 class="hero-name">
+                    <span class="name-first">Nivedh</span>
+                    <span class="name-last">Koloth Shijan</span>
+                </h1>
+                <p class="hero-tagline">Developer · Creator · Innovator</p>
+                <div class="hero-divider"></div>
+                <p class="hero-description">
+                    Building beautiful digital experiences with passion and precision.
+                    Turning complex problems into elegant solutions.
+                </p>
+            </div>
+        </div>
+
+        <section class="portfolio-section">
+            <h2 class="section-title">
+                <span class="section-icon">🚀</span>
+                Ventures
+            </h2>
+            <div class="ventures-grid">
+                <a href="https://volarindia.com" target="_blank" class="venture-card">
+                    <div class="venture-card-bg"></div>
+                    <div class="venture-card-content">
+                        <div class="venture-icon">✈️</div>
+                        <h3>Volar India</h3>
+                        <p>Aviation & Travel Solutions</p>
+                        <span class="venture-link">Visit →</span>
+                    </div>
+                </a>
+                <a href="https://branfresh.com" target="_blank" class="venture-card">
+                    <div class="venture-card-bg"></div>
+                    <div class="venture-card-content">
+                        <div class="venture-icon">🌿</div>
+                        <h3>BranFresh</h3>
+                        <p>Fresh & Organic Products</p>
+                        <span class="venture-link">Visit →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2 class="section-title">
+                <span class="section-icon">⚡</span>
+                What I Do
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h4>Design</h4>
+                    <p>Crafting pixel-perfect interfaces with modern aesthetics</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h4>Development</h4>
+                    <p>Full-stack solutions built with cutting-edge tech</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h4>Innovation</h4>
+                    <p>Pushing boundaries with creative problem solving</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SURPRISE PAGE — BMW THEMED BIRTHDAY -->
+    <div class="tab-page {% if active_tab == 'surprise' %}active{% endif %}" id="page-surprise">
+        <div class="surprise-container bmw-theme">
+
+            <!-- BMW Cinematic Hero Background -->
+            <div class="birthday-hero">
+                <!-- BMW Slideshow Background -->
+                <div class="bmw-slideshow" id="bmwSlideshow"></div>
+                <div class="bmw-hero-overlay"></div>
+
+                <!-- BMW M-Stripe Accent -->
+                <div class="bmw-m-stripe">
+                    <span class="m-blue"></span>
+                    <span class="m-darkblue"></span>
+                    <span class="m-red"></span>
+                </div>
+
+                <div class="birthday-confetti" id="confetti-container"></div>
+                <div class="birthday-glow bmw-glow"></div>
+                <div class="birthday-content">
+                    <div class="birthday-cake">🎂</div>
+                    <h1 class="birthday-title">
+                        <span class="birthday-word">Happy</span>
+                        <span class="birthday-word birthday-word-accent">Birthday</span>
+                    </h1>
+                    <h2 class="birthday-name">Shijan Koloth</h2>
+                    <p class="birthday-subtitle">A celebration of memories with the most amazing dad ❤️</p>
+                    <div class="birthday-stars">✨ 🎉 ✨</div>
+                </div>
+            </div>
+
+            <!-- BMW M-Stripe Divider -->
+            <div class="bmw-m-divider">
+                <span class="m-blue"></span>
+                <span class="m-darkblue"></span>
+                <span class="m-red"></span>
+            </div>
+
+            <!-- Photo Memory Flow -->
+            <div class="memory-section">
+                <h2 class="memory-title">
+                    <span class="memory-icon">📸</span>
+                    Precious Memories
+                </h2>
+                <p class="memory-subtitle">Every photo tells a story of love, laughter, and togetherness</p>
+
+                <div class="memory-flow" id="memoryFlow">
+                    <!-- Photos loaded dynamically -->
+                    <div class="memory-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading memories...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMW M-Stripe Divider -->
+            <div class="bmw-m-divider">
+                <span class="m-blue"></span>
+                <span class="m-darkblue"></span>
+                <span class="m-red"></span>
+            </div>
+
+            <!-- Dedication -->
+            <div class="dedication-section">
+                <div class="dedication-card bmw-dedication">
+                    <div class="dedication-glow"></div>
+                    <p class="dedication-emoji">💝</p>
+                    <h3>To the best dad in the world</h3>
+                    <p class="dedication-text">
+                        Thank you for every sacrifice, every lesson, and every moment of love.
+                        You are my hero, my guide, and my greatest blessing.
+                    </p>
+                    <p class="dedication-from">— With all my love, Nivedh</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════ LIGHTBOX MODAL ═══════ -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged memory" id="lightboxImg" />
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- ═══════ BIRTHDAY MUSIC AUDIO ═══════ -->
+    <audio id="birthdayAudio" loop preload="auto">
+        <source src="{{ url_for('static', filename='music/atlasaudio-birthday-606219.mp3') }}" type="audio/mpeg">
+    </audio>
+
+    <!-- ═══════ MUSIC CONTROL BUTTON ═══════ -->
+    <button class="music-control" id="musicControl" title="Toggle Birthday Music">
+        <span class="music-icon" id="musicIcon">🔇</span>
+        <span class="music-label" id="musicLabel">Play Music</span>
+    </button>
+
+
+    <!-- ═══════ APPLE-STYLE LIQUID TAB SWITCHER ═══════ -->
+    <nav class="liquid-tab-bar" id="liquidTabBar">
+        <div class="tab-bar-bg"></div>
+        <div class="tab-indicator" id="tabIndicator"></div>
+        <button class="tab-btn active" data-tab="home" data-href="/" id="tab-home">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">Home</span>
+        </button>
+        <button class="tab-btn" data-tab="surprise" data-href="/surprise" id="tab-surprise">
+            <span class="tab-icon">🎁</span>
+            <span class="tab-label">Surprise</span>
+        </button>
+    </nav>
+
+
+    <script>
+    // ═══════════════════════════════════════════════════
+    //  LIQUID TAB SWITCHER
+    // ═══════════════════════════════════════════════════
+    (function() {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const indicator = document.getElementById('tabIndicator');
+        const pages = document.querySelectorAll('.tab-page');
+        const activeTab = '{{ active_tab }}';
+
+        // Set initial active state
+        tabs.forEach(btn => {
+            if (btn.dataset.tab === activeTab) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        function moveIndicator(btn) {
+            const rect = btn.getBoundingClientRect();
+            const bar = document.getElementById('liquidTabBar').getBoundingClientRect();
+            indicator.style.width = rect.width + 'px';
+            indicator.style.left = (rect.left - bar.left) + 'px';
+        }
+
+        // Position indicator on load
+        const activeBtn = document.querySelector('.tab-btn.active');
+        if (activeBtn) {
+            requestAnimationFrame(() => moveIndicator(activeBtn));
+        }
+
+        tabs.forEach(btn => {
+            btn.addEventListener('click', () => {
+                moveIndicator(btn);
+                tabs.forEach(t => t.classList.remove('active'));
+                btn.classList.add('active');
+
+                const targetTab = btn.dataset.tab;
+                pages.forEach(p => {
+                    if (p.id === 'page-' + targetTab) {
+                        p.classList.add('active');
+                    } else {
+                        p.classList.remove('active');
+                    }
+                });
+
+                const href = btn.dataset.href;
+                if (href && window.location.pathname !== href) {
+                    window.history.pushState({}, '', href);
+                }
+
+                // If switching to surprise, trigger everything
+                if (targetTab === 'surprise') {
+                    loadSurprisePhotos();
+                    startConfetti();
+                    loadBMWSlideshow();
+                    showMusicControl();
+                } else {
+                    hideMusicControl();
+                }
+            });
+        });
+
+        window.addEventListener('popstate', () => {
+            const path = window.location.pathname;
+            const tab = path === '/surprise' ? 'surprise' : 'home';
+            const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+            if (btn) btn.click();
+        });
+
+        window.addEventListener('resize', () => {
+            const active = document.querySelector('.tab-btn.active');
+            if (active) moveIndicator(active);
+        });
+    })();
+
+
+    // ═══════════════════════════════════════════════════
+    //  BIRTHDAY MUSIC — 30% Volume
+    // ═══════════════════════════════════════════════════
+    const audioEl = document.getElementById('birthdayAudio');
+    const musicControl = document.getElementById('musicControl');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicLabel = document.getElementById('musicLabel');
+    let musicPlaying = false;
+
+    // Set volume to 30%
+    audioEl.volume = 0.3;
+
+    function showMusicControl() {
+        musicControl.classList.add('visible');
+    }
+
+    function hideMusicControl() {
+        musicControl.classList.remove('visible');
+        if (musicPlaying) {
+            audioEl.pause();
+            musicPlaying = false;
+            musicIcon.textContent = '🔇';
+            musicLabel.textContent = 'Play Music';
+        }
+    }
+
+    musicControl.addEventListener('click', () => {
+        if (musicPlaying) {
+            audioEl.pause();
+            musicPlaying = false;
+            musicIcon.textContent = '🔇';
+            musicLabel.textContent = 'Play Music';
+        } else {
+            audioEl.play().then(() => {
+                musicPlaying = true;
+                musicIcon.textContent = '🎵';
+                musicLabel.textContent = 'Playing';
+            }).catch(e => {
+                console.log('Audio play blocked:', e);
+            });
+        }
+    });
+
+    // Auto-show music control on surprise page
+    if ('{{ active_tab }}' === 'surprise') {
+        showMusicControl();
+    }
+
+
+    // ═══════════════════════════════════════════════════
+    //  BMW THEME SLIDESHOW
+    // ═══════════════════════════════════════════════════
+    let bmwLoaded = false;
+
+    function loadBMWSlideshow() {
+        if (bmwLoaded) return;
+        bmwLoaded = true;
+
+        fetch('/api/bmw-theme-images')
+            .then(r => r.json())
+            .then(images => {
+                const container = document.getElementById('bmwSlideshow');
+                if (!container || images.length === 0) return;
+
+                images.forEach((img, i) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'bmw-slide' + (i === 0 ? ' active' : '');
+                    slide.style.backgroundImage = `url('/static/images/BMW_theme/${encodeURIComponent(img)}')`;
+                    container.appendChild(slide);
+                });
+
+                // Auto-rotate slides
+                let currentSlide = 0;
+                const slides = container.querySelectorAll('.bmw-slide');
+                if (slides.length <= 1) return;
+
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 5000);
+            });
+    }
+
+    // Auto-load BMW on surprise page
+    if ('{{ active_tab }}' === 'surprise') {
+        loadBMWSlideshow();
+    }
+
+
+    // ═══════════════════════════════════════════════════
+    //  LIGHTBOX
+    // ═══════════════════════════════════════════════════
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    let lightboxPhotos = [];
+    let lightboxIndex = 0;
+
+    function openLightbox(src, index) {
+        lightboxPhotos = Array.from(document.querySelectorAll('#memoryFlow .memory-card img')).map(img => img.src);
+        lightboxIndex = index;
+        lightboxImg.src = src;
+        lightboxOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateCounter();
+    }
+
+    function closeLightbox() {
+        lightboxOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        // Small delay before clearing src to allow animation
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
+    function navigateLightbox(direction) {
+        lightboxIndex += direction;
+        if (lightboxIndex < 0) lightboxIndex = lightboxPhotos.length - 1;
+        if (lightboxIndex >= lightboxPhotos.length) lightboxIndex = 0;
+        lightboxImg.classList.add('lightbox-transitioning');
+        setTimeout(() => {
+            lightboxImg.src = lightboxPhotos[lightboxIndex];
+            lightboxImg.classList.remove('lightbox-transitioning');
+            updateCounter();
+        }, 200);
+    }
+
+    function updateCounter() {
+        lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxPhotos.length}`;
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    lightboxNext.addEventListener('click', () => navigateLightbox(1));
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightboxOverlay.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+
+
+    // ═══════════════════════════════════════════════════
+    //  SURPRISE PHOTOS LOADER (with lightbox click)
+    // ═══════════════════════════════════════════════════
+    let photosLoaded = false;
+
+    function loadSurprisePhotos() {
+        if (photosLoaded) return;
+        photosLoaded = true;
+
+        fetch('/api/surprise-photos')
+            .then(r => r.json())
+            .then(photos => {
+                const flow = document.getElementById('memoryFlow');
+                flow.innerHTML = '';
+
+                const shuffled = photos.sort(() => Math.random() - 0.5);
+                const patterns = ['normal', 'wide', 'tall', 'normal', 'normal', 'tall', 'wide', 'normal'];
+
+                shuffled.forEach((photo, i) => {
+                    const pattern = patterns[i % patterns.length];
+                    const delay = Math.random() * 0.8;
+                    const rotation = (Math.random() - 0.5) * 6;
+
+                    const card = document.createElement('div');
+                    card.className = `memory-card memory-${pattern}`;
+                    card.style.setProperty('--delay', delay + 's');
+                    card.style.setProperty('--rotation', rotation + 'deg');
+                    card.style.animationDelay = delay + 's';
+
+                    card.innerHTML = `
+                        <div class="memory-card-inner">
+                            <img src="/photo/${photo}" alt="Memory" loading="lazy" />
+                            <div class="memory-card-overlay">
+                                <span class="memory-expand-icon">⤢</span>
+                            </div>
+                        </div>
+                    `;
+
+                    // Click to open lightbox
+                    card.addEventListener('click', () => {
+                        const imgEl = card.querySelector('img');
+                        openLightbox(imgEl.src, i);
+                    });
+
+                    // Feed ambient canvas with loaded images
+                    const img = card.querySelector('img');
+                    img.addEventListener('load', () => {
+                        addToAmbient(img);
+                    });
+
+                    flow.appendChild(card);
+                });
+            });
+    }
+
+    // Auto-load if surprise page is active
+    if ('{{ active_tab }}' === 'surprise') {
+        loadSurprisePhotos();
+        setTimeout(startConfetti, 500);
+    }
+
+
+    // ═══════════════════════════════════════════════════
+    //  AMBIENT BACKGROUND FROM PHOTOS
+    // ═══════════════════════════════════════════════════
+    const ambientCanvas = document.getElementById('ambientCanvas');
+    const actx = ambientCanvas.getContext('2d');
+    let ambientColors = [];
+
+    function resizeCanvas() {
+        ambientCanvas.width = window.innerWidth;
+        ambientCanvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function addToAmbient(img) {
+        try {
+            const tempCanvas = document.createElement('canvas');
+            const tc = tempCanvas.getContext('2d');
+            tempCanvas.width = 8;
+            tempCanvas.height = 8;
+            tc.drawImage(img, 0, 0, 8, 8);
+            const data = tc.getImageData(0, 0, 8, 8).data;
+            for (let i = 0; i < data.length; i += 16) {
+                ambientColors.push({
+                    r: data[i],
+                    g: data[i + 1],
+                    b: data[i + 2]
+                });
+            }
+            if (ambientColors.length > 60) {
+                ambientColors = ambientColors.slice(-60);
+            }
+        } catch(e) {}
+    }
+
+    let ambientBlobs = [];
+    for (let i = 0; i < 8; i++) {
+        ambientBlobs.push({
+            x: Math.random(),
+            y: Math.random(),
+            vx: (Math.random() - 0.5) * 0.0003,
+            vy: (Math.random() - 0.5) * 0.0003,
+            radius: 0.2 + Math.random() * 0.3,
+            colorIdx: Math.floor(Math.random() * 20)
+        });
+    }
+
+    function renderAmbient() {
+        const w = ambientCanvas.width;
+        const h = ambientCanvas.height;
+
+        actx.fillStyle = '#0a0a0f';
+        actx.fillRect(0, 0, w, h);
+
+        if (ambientColors.length > 0) {
+            ambientBlobs.forEach(blob => {
+                blob.x += blob.vx;
+                blob.y += blob.vy;
+                if (blob.x < -0.2 || blob.x > 1.2) blob.vx *= -1;
+                if (blob.y < -0.2 || blob.y > 1.2) blob.vy *= -1;
+
+                const color = ambientColors[blob.colorIdx % ambientColors.length];
+                const gradient = actx.createRadialGradient(
+                    blob.x * w, blob.y * h, 0,
+                    blob.x * w, blob.y * h, blob.radius * Math.max(w, h)
+                );
+                gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, 0.12)`);
+                gradient.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0)`);
+
+                actx.fillStyle = gradient;
+                actx.fillRect(0, 0, w, h);
+            });
+        } else {
+            const defaultColors = [
+                {r: 0, g: 102, b: 177},    // BMW Blue
+                {r: 28, g: 28, b: 28},     // BMW Dark
+                {r: 99, g: 102, b: 241},   // indigo
+                {r: 59, g: 130, b: 246},   // blue
+            ];
+            ambientBlobs.forEach((blob, i) => {
+                blob.x += blob.vx;
+                blob.y += blob.vy;
+                if (blob.x < -0.2 || blob.x > 1.2) blob.vx *= -1;
+                if (blob.y < -0.2 || blob.y > 1.2) blob.vy *= -1;
+
+                const color = defaultColors[i % defaultColors.length];
+                const gradient = actx.createRadialGradient(
+                    blob.x * w, blob.y * h, 0,
+                    blob.x * w, blob.y * h, blob.radius * Math.max(w, h)
+                );
+                gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, 0.08)`);
+                gradient.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0)`);
+
+                actx.fillStyle = gradient;
+                actx.fillRect(0, 0, w, h);
+            });
+        }
+
+        requestAnimationFrame(renderAmbient);
+    }
+    renderAmbient();
+
+
+    // ═══════════════════════════════════════════════════
+    //  CONFETTI ANIMATION
+    // ═══════════════════════════════════════════════════
+    let confettiActive = false;
+    function startConfetti() {
+        if (confettiActive) return;
+        confettiActive = true;
+        const container = document.getElementById('confetti-container');
+        if (!container) return;
+        container.innerHTML = '';
+
+        const confettiColors = [
+            '#0066B1', '#E5001A', '#fff', '#1C69D4',
+            '#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff',
+            '#ff85a1', '#ffc75f', '#a685e2', '#ff6f91'
+        ];
+
+        for (let i = 0; i < 120; i++) {
+            const piece = document.createElement('div');
+            piece.className = 'confetti-piece';
+            piece.style.setProperty('--x', Math.random() * 100 + 'vw');
+            piece.style.setProperty('--delay', Math.random() * 3 + 's');
+            piece.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
+            piece.style.setProperty('--rotation', Math.random() * 720 + 'deg');
+            piece.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            piece.style.width = (4 + Math.random() * 8) + 'px';
+            piece.style.height = (4 + Math.random() * 8) + 'px';
+            piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            container.appendChild(piece);
+        }
+    }
+
+
+    // ═══════════════════════════════════════════════════
+    //  FLOATING PARTICLES
+    // ═══════════════════════════════════════════════════
+    (function() {
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.setProperty('--x', Math.random() * 100 + 'vw');
+            p.style.setProperty('--y', Math.random() * 100 + 'vh');
+            p.style.setProperty('--size', (2 + Math.random() * 4) + 'px');
+            p.style.setProperty('--duration', (10 + Math.random() * 20) + 's');
+            p.style.setProperty('--delay', Math.random() * 10 + 's');
+            container.appendChild(p);
+        }
+    })();
+
+    </script>
+</body>
+</html>
