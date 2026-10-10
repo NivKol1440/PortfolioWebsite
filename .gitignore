@@ -9,6 +9,9 @@ venv/
 # HEIC cache (generated at runtime)
 .cache/
 
+# Personal surprise photos
+/static/images/surprise/dad/
+
 # IDE
 .vscode/
 .idea/

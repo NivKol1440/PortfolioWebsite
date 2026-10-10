@@ -1359,3 +1359,301 @@ body {
     }
 }
 
+/* Warm portfolio styling adapted from the Koloth Groups Site stylesheet. */
+body:has(#page-home.active) {
+    --home-ink: #111111;
+    --home-muted: #6a6864;
+    --home-paper: #f7f5f0;
+    --home-panel: #ece9e1;
+    --home-line: rgba(17, 17, 17, 0.15);
+    --home-accent: #fa5e36;
+    --home-acid: #d8fb67;
+    background: var(--home-paper);
+    color: var(--home-ink);
+    font-family: "Manrope", sans-serif;
+}
+
+body:has(#page-home.active) #ambientCanvas,
+body:has(#page-home.active) #particles {
+    display: none;
+}
+
+#page-home.active {
+    width: min(1216px, calc(100% - 48px));
+    max-width: none;
+    padding: 0 0 8rem;
+    color: var(--home-ink);
+}
+
+#page-home .portfolio-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.55fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    min-height: 82vh;
+    align-items: center;
+    padding: 8rem 0 5rem;
+    text-align: left;
+}
+
+#page-home .hero-glow {
+    background: radial-gradient(
+        circle,
+        rgba(216, 251, 103, 0.24) 0%,
+        rgba(250, 94, 54, 0.1) 42%,
+        transparent 72%
+    );
+}
+
+#page-home .hero-content {
+    width: 100%;
+}
+
+#page-home .hero-profile {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    color: var(--home-muted);
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+#page-home .hero-profile:hover {
+    color: var(--home-accent);
+    transform: translateY(-4px);
+}
+
+#page-home .hero-profile-image {
+    width: clamp(180px, 25vw, 300px);
+    aspect-ratio: 1;
+    border: 8px solid rgba(255, 255, 255, 0.78);
+    border-radius: 50%;
+    box-shadow: 0 24px 60px -26px rgba(17, 17, 17, 0.45);
+    object-fit: cover;
+}
+
+#page-home .hero-badge {
+    color: var(--home-muted);
+    background: rgba(236, 233, 225, 0.7);
+    border-color: var(--home-line);
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#page-home .hero-name {
+    max-width: 830px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(3.1rem, 7vw, 6.1rem);
+    font-weight: 700;
+    letter-spacing: -0.075em;
+    line-height: 0.98;
+}
+
+#page-home .name-first {
+    color: var(--home-ink);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+}
+
+#page-home .name-last {
+    color: var(--home-accent);
+    background: none;
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    -webkit-text-fill-color: currentColor;
+    animation: none;
+}
+
+#page-home .hero-tagline {
+    color: var(--home-muted);
+    font-family: "DM Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+}
+
+#page-home .hero-divider {
+    margin-left: 0;
+    background: linear-gradient(90deg, var(--home-accent), var(--home-acid));
+}
+
+#page-home .hero-description {
+    color: var(--home-muted);
+}
+
+#page-home .portfolio-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--home-line);
+}
+
+#page-home .section-title {
+    color: var(--home-ink);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    letter-spacing: -0.06em;
+}
+
+#page-home .section-icon {
+    color: var(--home-accent);
+}
+
+#page-home .venture-card {
+    color: var(--home-ink);
+    border-radius: 8px;
+}
+
+#page-home .venture-card:hover {
+    box-shadow: 0 24px 50px -24px rgba(17, 17, 17, 0.32);
+}
+
+#page-home .venture-card-bg {
+    background: rgba(236, 233, 225, 0.72);
+    border-color: var(--home-line);
+    border-radius: 8px;
+    backdrop-filter: none;
+}
+
+#page-home .venture-card:hover .venture-card-bg {
+    background: var(--home-panel);
+    border-color: rgba(250, 94, 54, 0.4);
+}
+
+#page-home .venture-card-content {
+    padding: 2rem;
+}
+
+#page-home .venture-card h3,
+#page-home .skill-card h4 {
+    color: var(--home-ink);
+    font-family: "Manrope", sans-serif;
+    letter-spacing: -0.04em;
+}
+
+#page-home .venture-card p,
+#page-home .skill-card p {
+    color: var(--home-muted);
+}
+
+#page-home .venture-icon {
+    font-size: 2rem;
+}
+
+#page-home .venture-link {
+    color: var(--home-accent);
+}
+
+#page-home .venture-card:hover .venture-link {
+    color: var(--home-ink);
+}
+
+#page-home .skills-showcase {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+#page-home .skills-rocket {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border: 1px solid var(--home-line);
+    border-radius: 8px;
+    object-fit: cover;
+    align-self: start;
+}
+
+#page-home .skill-card {
+    background: rgba(236, 233, 225, 0.72);
+    border-color: var(--home-line);
+    border-radius: 8px;
+    backdrop-filter: none;
+}
+
+#page-home .skill-card:hover {
+    background: var(--home-panel);
+    border-color: rgba(250, 94, 54, 0.4);
+    box-shadow: 0 18px 40px -24px rgba(17, 17, 17, 0.3);
+}
+
+body:has(#page-home.active) .liquid-tab-bar {
+    box-shadow: 0 12px 36px rgba(17, 17, 17, 0.16);
+}
+
+body:has(#page-home.active) .tab-bar-bg {
+    background: rgba(247, 245, 240, 0.88);
+    border-color: var(--home-line);
+    box-shadow: 0 8px 32px rgba(17, 17, 17, 0.12);
+}
+
+body:has(#page-home.active) .tab-indicator {
+    background: rgba(250, 94, 54, 0.16);
+    border-color: rgba(250, 94, 54, 0.25);
+    box-shadow: none;
+}
+
+body:has(#page-home.active) .tab-btn {
+    color: var(--home-muted);
+    font-family: "Manrope", sans-serif;
+}
+
+body:has(#page-home.active) .tab-btn:hover,
+body:has(#page-home.active) .tab-btn.active {
+    color: var(--home-ink);
+}
+
+body:has(#page-home.active) ::selection {
+    background: var(--home-acid);
+    color: var(--home-ink);
+}
+
+@media (max-width: 768px) {
+    #page-home.active {
+        width: min(100% - 32px, 1216px);
+        padding: 0 0 7rem;
+    }
+
+    #page-home .portfolio-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(120px, 0.48fr);
+        gap: 1.25rem;
+        min-height: 72vh;
+        padding: 7rem 0 3rem;
+    }
+
+    #page-home .hero-name {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+    }
+
+    #page-home .hero-profile-image {
+        width: min(100%, 180px);
+        border-width: 5px;
+    }
+
+    #page-home .hero-profile {
+        font-size: 0.62rem;
+    }
+
+    #page-home .portfolio-section {
+        margin-top: 2rem;
+        padding-top: 2.5rem;
+    }
+
+    #page-home .skills-showcase {
+        grid-template-columns: minmax(100px, 0.4fr) minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    #page-home .skills-rocket {
+        min-height: 0;
+    }
+
+    #page-home .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

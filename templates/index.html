@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -37,6 +38,20 @@
                     Turning complex problems into elegant solutions.
                 </p>
             </div>
+            <a
+                class="hero-profile"
+                href="https://www.linkedin.com/in/nivedh-koloth-shijan-a52610355"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Nivedh Koloth Shijan's LinkedIn profile"
+            >
+                <img
+                    class="hero-profile-image"
+                    src="{{ url_for('static', filename='images/nivedh-linkedin.jpg') }}"
+                    alt="Nivedh Koloth Shijan"
+                >
+                <span>View LinkedIn profile <span aria-hidden="true">↗</span></span>
+            </a>
         </div>
 
         <section class="portfolio-section">
@@ -71,21 +86,29 @@
                 <span class="section-icon">⚡</span>
                 What I Do
             </h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h4>Design</h4>
-                    <p>Crafting pixel-perfect interfaces with modern aesthetics</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h4>Development</h4>
-                    <p>Full-stack solutions built with cutting-edge tech</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🧠</div>
-                    <h4>Innovation</h4>
-                    <p>Pushing boundaries with creative problem solving</p>
+            <div class="skills-showcase">
+                <img
+                    class="skills-rocket"
+                    src="{{ url_for('static', filename='images/linkedin-rocket-banner.jpg') }}"
+                    alt="Rocket in the LinkedIn profile banner"
+                    loading="lazy"
+                >
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h4>Design</h4>
+                        <p>Crafting pixel-perfect interfaces with modern aesthetics</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <h4>Development</h4>
+                        <p>Full-stack solutions built with cutting-edge tech</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🧠</div>
+                        <h4>Innovation</h4>
+                        <p>Pushing boundaries with creative problem solving</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,99 +216,7 @@
     </button>
 
 
-    <!-- ═══════ APPLE-STYLE LIQUID TAB SWITCHER ═══════ -->
-    <nav class="liquid-tab-bar" id="liquidTabBar">
-        <div class="tab-bar-bg"></div>
-        <div class="tab-indicator" id="tabIndicator"></div>
-        <button class="tab-btn active" data-tab="home" data-href="/" id="tab-home">
-            <span class="tab-icon">🏠</span>
-            <span class="tab-label">Home</span>
-        </button>
-        <button class="tab-btn" data-tab="surprise" data-href="/surprise" id="tab-surprise">
-            <span class="tab-icon">🎁</span>
-            <span class="tab-label">Surprise</span>
-        </button>
-    </nav>
-
-
     <script>
-    // ═══════════════════════════════════════════════════
-    //  LIQUID TAB SWITCHER
-    // ═══════════════════════════════════════════════════
-    (function() {
-        const tabs = document.querySelectorAll('.tab-btn');
-        const indicator = document.getElementById('tabIndicator');
-        const pages = document.querySelectorAll('.tab-page');
-        const activeTab = '{{ active_tab }}';
-
-        // Set initial active state
-        tabs.forEach(btn => {
-            if (btn.dataset.tab === activeTab) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-
-        function moveIndicator(btn) {
-            const rect = btn.getBoundingClientRect();
-            const bar = document.getElementById('liquidTabBar').getBoundingClientRect();
-            indicator.style.width = rect.width + 'px';
-            indicator.style.left = (rect.left - bar.left) + 'px';
-        }
-
-        // Position indicator on load
-        const activeBtn = document.querySelector('.tab-btn.active');
-        if (activeBtn) {
-            requestAnimationFrame(() => moveIndicator(activeBtn));
-        }
-
-        tabs.forEach(btn => {
-            btn.addEventListener('click', () => {
-                moveIndicator(btn);
-                tabs.forEach(t => t.classList.remove('active'));
-                btn.classList.add('active');
-
-                const targetTab = btn.dataset.tab;
-                pages.forEach(p => {
-                    if (p.id === 'page-' + targetTab) {
-                        p.classList.add('active');
-                    } else {
-                        p.classList.remove('active');
-                    }
-                });
-
-                const href = btn.dataset.href;
-                if (href && window.location.pathname !== href) {
-                    window.history.pushState({}, '', href);
-                }
-
-                // If switching to surprise, trigger everything
-                if (targetTab === 'surprise') {
-                    loadSurprisePhotos();
-                    startConfetti();
-                    loadBMWSlideshow();
-                    showMusicControl();
-                } else {
-                    hideMusicControl();
-                }
-            });
-        });
-
-        window.addEventListener('popstate', () => {
-            const path = window.location.pathname;
-            const tab = path === '/surprise' ? 'surprise' : 'home';
-            const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
-            if (btn) btn.click();
-        });
-
-        window.addEventListener('resize', () => {
-            const active = document.querySelector('.tab-btn.active');
-            if (active) moveIndicator(active);
-        });
-    })();
-
-
     // ═══════════════════════════════════════════════════
     //  BIRTHDAY MUSIC — 30% Volume
     // ═══════════════════════════════════════════════════
@@ -631,6 +562,10 @@
             piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
             container.appendChild(piece);
         }
+    }
+
+    if ('{{ active_tab }}' === 'surprise') {
+        startConfetti();
     }
 
 
