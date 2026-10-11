@@ -1865,3 +1865,332 @@ body:has(#page-home.active) {
         border-radius: 22px;
     }
 }
+
+body:has(#page-home.active),
+body:has(#page-shop.active) {
+    background-color: #d4d7d9;
+    background-image:
+        linear-gradient(rgba(35, 38, 41, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(35, 38, 41, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+body:has(#page-shop.active) #ambientCanvas,
+body:has(#page-shop.active) #particles {
+    display: none;
+}
+
+.site-nav {
+    position: fixed;
+    z-index: 1100;
+    top: 18px;
+    left: 50%;
+    display: flex;
+    gap: 4px;
+    padding: 5px;
+    transform: translateX(-50%);
+    border: 1px solid rgba(35, 38, 41, 0.14);
+    border-radius: 999px;
+    background: rgba(212, 215, 217, 0.94);
+    box-shadow: 0 8px 28px rgba(35, 38, 41, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.site-nav a {
+    padding: 9px 18px;
+    border-radius: 999px;
+    color: #62686d;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    background: #232629;
+    color: #f1f2f3;
+}
+
+.site-nav a:focus-visible {
+    outline: 2px solid #70777c;
+    outline-offset: 3px;
+}
+
+#page-shop.active {
+    width: min(1216px, calc(100% - 48px));
+    max-width: none;
+    padding: 7rem 0 5rem;
+    color: #232629;
+}
+
+.shop-hero {
+    display: flex;
+    min-height: 350px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2.5rem, 7vw, 5rem) 1.5rem;
+    border: 1px solid rgba(208, 211, 213, 0.24);
+    border-radius: 28px;
+    background:
+        linear-gradient(rgba(231, 233, 234, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(231, 233, 234, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 0%, rgba(174, 180, 184, 0.16), transparent 65%),
+        #222629;
+    background-size: 44px 44px, 44px 44px, auto, auto;
+    box-shadow: 0 28px 70px -42px rgba(23, 25, 27, 0.72);
+    text-align: center;
+}
+
+.shop-eyebrow {
+    margin-bottom: 0.85rem;
+    color: #aeb4b8;
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.shop-hero h1 {
+    color: #f1f2f3;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(3.4rem, 8vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: -0.08em;
+    line-height: 1;
+}
+
+.shop-hero h1 span {
+    color: #aeb4b8;
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.shop-intro {
+    max-width: 500px;
+    margin: 1.25rem 0 1.5rem;
+    color: rgba(231, 233, 234, 0.72);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.shop-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(231, 233, 234, 0.18);
+    border-radius: 999px;
+    color: #e7e9ea;
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+}
+
+.shop-status span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c4c8cb;
+    box-shadow: 0 0 12px rgba(208, 211, 213, 0.65);
+}
+
+.shop-products {
+    padding: 4rem 0 0;
+}
+
+.shop-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.shop-section-heading .shop-eyebrow {
+    margin-bottom: 0.4rem;
+    color: #70777c;
+}
+
+.shop-section-heading h2 {
+    color: #232629;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.35rem);
+    letter-spacing: -0.06em;
+}
+
+.shop-section-heading > p {
+    padding-bottom: 0.35rem;
+    color: #62686d;
+    font-size: 0.85rem;
+}
+
+.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.shop-product-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(35, 38, 41, 0.14);
+    border-radius: 16px;
+    background: rgba(241, 242, 243, 0.72);
+}
+
+.shop-product-art {
+    position: relative;
+    display: grid;
+    min-height: 250px;
+    place-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(241, 242, 243, 0.42), transparent 56%),
+        linear-gradient(145deg, #c4c8cb, #aeb4b8);
+}
+
+.shop-product-art::before {
+    position: absolute;
+    width: 55%;
+    height: 72%;
+    border: 1px solid rgba(35, 38, 41, 0.1);
+    border-radius: 48% 48% 22% 22%;
+    background: linear-gradient(145deg, #34393d, #17191b);
+    box-shadow: 0 22px 38px rgba(23, 25, 27, 0.25);
+    content: "";
+}
+
+.shop-product-art-hoodie::before {
+    width: 64%;
+    height: 70%;
+    border-radius: 35% 35% 14% 14%;
+    background: linear-gradient(145deg, #41474b, #222629);
+    clip-path: polygon(22% 0, 38% 0, 43% 9%, 57% 9%, 62% 0, 78% 0, 100% 18%, 88% 42%, 78% 36%, 82% 100%, 18% 100%, 22% 36%, 12% 42%, 0 18%);
+}
+
+.shop-product-art-cap::before {
+    width: 58%;
+    height: 36%;
+    border-radius: 60% 60% 14% 14%;
+    background: linear-gradient(145deg, #41474b, #222629);
+    transform: translateY(-8%);
+}
+
+.shop-product-art-cap::after {
+    position: absolute;
+    width: 44%;
+    height: 9%;
+    margin-top: 18%;
+    border: 1px solid rgba(35, 38, 41, 0.12);
+    border-radius: 50%;
+    background: #2b3034;
+    content: "";
+}
+
+.shop-garment {
+    z-index: 1;
+    align-self: center;
+    margin-top: 1.5rem;
+    color: #d4d7d9;
+    font-family: "DM Mono", monospace;
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+.shop-product-art-cap .shop-garment {
+    margin-top: -1.1rem;
+    font-size: 0.7rem;
+}
+
+.shop-product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.shop-product-info h3 {
+    color: #232629;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.98rem;
+    letter-spacing: -0.03em;
+}
+
+.shop-product-info p {
+    margin-top: 0.25rem;
+    color: #62686d;
+    font-size: 0.72rem;
+}
+
+.shop-coming-soon {
+    flex-shrink: 0;
+    padding: 0.4rem 0.55rem;
+    border: 1px solid rgba(35, 38, 41, 0.14);
+    border-radius: 999px;
+    color: #62686d;
+    font-family: "DM Mono", monospace;
+    font-size: 0.62rem;
+}
+
+.shop-contact {
+    margin-top: 1.5rem;
+    color: #62686d;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.shop-contact a {
+    margin-left: 0.25rem;
+    color: #232629;
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    #page-shop.active {
+        width: min(100% - 32px, 1216px);
+        padding-top: 6rem;
+    }
+
+    .shop-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-product-art {
+        min-height: 220px;
+    }
+
+    .shop-section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-nav {
+        top: 12px;
+    }
+
+    .site-nav a {
+        padding: 8px 15px;
+    }
+
+    .shop-hero {
+        min-height: 320px;
+        border-radius: 22px;
+    }
+
+    .shop-product-info {
+        padding: 0.85rem;
+    }
+
+    .shop-coming-soon {
+        font-size: 0.58rem;
+    }
+}

@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logos/Logo.ico', v=2) }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('favicon') }}?v=6">
+    <link rel="shortcut icon" href="{{ url_for('favicon') }}?v=6">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -19,6 +20,11 @@
 
     <!-- ═══════ FLOATING PARTICLES ═══════ -->
     <div id="particles"></div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}" {% if active_tab == 'home' %}aria-current="page"{% endif %}>Portfolio</a>
+        <a href="{{ url_for('shop') }}" {% if active_tab == 'shop' %}aria-current="page"{% endif %}>Shop</a>
+    </nav>
 
     <!-- ═══════ TAB CONTENT PAGES ═══════ -->
 
@@ -139,6 +145,71 @@
             </div>
         </section>
     </div>
+
+    <!-- NKS MERCH SHOP -->
+    <main class="tab-page {% if active_tab == 'shop' %}active{% endif %}" id="page-shop">
+        <section class="shop-hero">
+            <p class="shop-eyebrow">NKS GOODS · THE FIRST DROP</p>
+            <h1>NKS <span>Merch</span></h1>
+            <p class="shop-intro">
+                A little something for the people building, creating, and dreaming big.
+                The first collection is on its way.
+            </p>
+            <span class="shop-status"><span aria-hidden="true"></span> First drop coming soon</span>
+        </section>
+
+        <section class="shop-products" aria-labelledby="shop-products-title">
+            <div class="shop-section-heading">
+                <div>
+                    <p class="shop-eyebrow">THE COLLECTION</p>
+                    <h2 id="shop-products-title">Made for your everyday</h2>
+                </div>
+                <p>Three essentials. One NKS mark.</p>
+            </div>
+            <div class="shop-product-grid">
+                <article class="shop-product-card">
+                    <div class="shop-product-art shop-product-art-tee" aria-hidden="true">
+                        <span class="shop-garment">NKS</span>
+                    </div>
+                    <div class="shop-product-info">
+                        <div>
+                            <h3>Everyday Tee</h3>
+                            <p>Relaxed fit · First drop</p>
+                        </div>
+                        <span class="shop-coming-soon">Coming soon</span>
+                    </div>
+                </article>
+                <article class="shop-product-card">
+                    <div class="shop-product-art shop-product-art-hoodie" aria-hidden="true">
+                        <span class="shop-garment">NKS</span>
+                    </div>
+                    <div class="shop-product-info">
+                        <div>
+                            <h3>Creator Hoodie</h3>
+                            <p>Everyday layer · First drop</p>
+                        </div>
+                        <span class="shop-coming-soon">Coming soon</span>
+                    </div>
+                </article>
+                <article class="shop-product-card">
+                    <div class="shop-product-art shop-product-art-cap" aria-hidden="true">
+                        <span class="shop-garment">NKS</span>
+                    </div>
+                    <div class="shop-product-info">
+                        <div>
+                            <h3>Signature Cap</h3>
+                            <p>Classic fit · First drop</p>
+                        </div>
+                        <span class="shop-coming-soon">Coming soon</span>
+                    </div>
+                </article>
+            </div>
+            <p class="shop-contact">
+                Want to be first to hear when the shop opens?
+                <a href="mailto:nivedhshijan@gmail.com?subject=NKS%20Merch%20launch">Get in touch <span aria-hidden="true">↗</span></a>
+            </p>
+        </section>
+    </main>
 
     <!-- SURPRISE PAGE — BMW THEMED BIRTHDAY -->
     <div class="tab-page {% if active_tab == 'surprise' %}active{% endif %}" id="page-surprise">

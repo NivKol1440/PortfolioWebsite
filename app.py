@@ -16,6 +16,17 @@ def home():
     return render_template('index.html', active_tab='home')
 
 
+@app.route('/shop')
+def shop():
+    return render_template('index.html', active_tab='shop')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    favicon_path = os.path.join(app.static_folder, 'images', 'Logos', 'Logo.ico')
+    return send_file(favicon_path, mimetype='image/x-icon', max_age=0)
+
+
 @app.route('/surprise')
 def surprise():
     return render_template('index.html', active_tab='surprise')
