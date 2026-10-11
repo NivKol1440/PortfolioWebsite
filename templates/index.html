@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logos/Logo.ico?v=2') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -26,7 +27,14 @@
         <div class="portfolio-hero">
             <div class="hero-glow"></div>
             <div class="hero-content">
-                <div class="hero-badge">👋 Welcome</div>
+                <div class="hero-badge">
+                    <img
+                        class="hero-brand-logo"
+                        src="{{ url_for('static', filename='images/Logos/Logo.png') }}"
+                        alt=""
+                    >
+                    <span>Welcome</span>
+                </div>
                 <h1 class="hero-name">
                     <span class="name-first">Nivedh</span>
                     <span class="name-last">Koloth Shijan</span>
@@ -37,6 +45,24 @@
                     Building beautiful digital experiences with passion and precision.
                     Turning complex problems into elegant solutions.
                 </p>
+                <nav class="hero-social-links" aria-label="Social links">
+                    <a href="https://github.com/Nivedh-maker" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15 1 .1.75 2.47 3.73 1.77.1-.72.4-1.2.7-1.48-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.12-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/nivedhkoloth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.7-3.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://x.com/realNivedhK" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.45L5.53 22H2.4l7.25-8.28L1.8 2h6.4l4.43 6.78L18.9 2Zm-1.1 17.9h1.73L7.28 3.99H5.42L17.8 19.9Z"/></svg>
+                        <span>X</span>
+                    </a>
+                    <a href="mailto:nivedhshijan@gmail.com" aria-label="Email Nivedh at nivedhshijan@gmail.com">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.5l9 6.2 9-6.2V6H3Zm18 12V9l-8.43 5.81a1 1 0 0 1-1.14 0L3 9v9h18Z"/></svg>
+                        <span>Email</span>
+                    </a>
+                </nav>
             </div>
             <a
                 class="hero-profile"
@@ -57,7 +83,7 @@
         <section class="portfolio-section">
             <h2 class="section-title">
                 <span class="section-icon">🚀</span>
-                Ventures
+                Projects I Worked On
             </h2>
             <div class="ventures-grid">
                 <a href="https://volarindia.com" target="_blank" class="venture-card">
@@ -217,6 +243,13 @@
 
 
     <script>
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.addEventListener('pointermove', event => {
+            document.body.style.setProperty('--cursor-x', `${event.clientX}px`);
+            document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
+        });
+    }
+
     // ═══════════════════════════════════════════════════
     //  BIRTHDAY MUSIC — 30% Volume
     // ═══════════════════════════════════════════════════
@@ -452,10 +485,11 @@
             tc.drawImage(img, 0, 0, 8, 8);
             const data = tc.getImageData(0, 0, 8, 8).data;
             for (let i = 0; i < data.length; i += 16) {
+                const gray = Math.round(data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114);
                 ambientColors.push({
-                    r: data[i],
-                    g: data[i + 1],
-                    b: data[i + 2]
+                    r: gray,
+                    g: gray,
+                    b: gray
                 });
             }
             if (ambientColors.length > 60) {
@@ -480,7 +514,7 @@
         const w = ambientCanvas.width;
         const h = ambientCanvas.height;
 
-        actx.fillStyle = '#0a0a0f';
+        actx.fillStyle = '#17191b';
         actx.fillRect(0, 0, w, h);
 
         if (ambientColors.length > 0) {
@@ -503,10 +537,10 @@
             });
         } else {
             const defaultColors = [
-                {r: 0, g: 102, b: 177},    // BMW Blue
-                {r: 28, g: 28, b: 28},     // BMW Dark
-                {r: 99, g: 102, b: 241},   // indigo
-                {r: 59, g: 130, b: 246},   // blue
+                {r: 174, g: 180, b: 184},
+                {r: 98, g: 104, b: 109},
+                {r: 196, g: 200, b: 203},
+                {r: 127, g: 133, b: 138},
             ];
             ambientBlobs.forEach((blob, i) => {
                 blob.x += blob.vx;
@@ -544,9 +578,9 @@
         container.innerHTML = '';
 
         const confettiColors = [
-            '#0066B1', '#E5001A', '#fff', '#1C69D4',
-            '#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff',
-            '#ff85a1', '#ffc75f', '#a685e2', '#ff6f91'
+            '#62686d', '#aeb4b8', '#f1f2f3', '#d6d9db',
+            '#7f858a', '#c4c8cb', '#969ca1', '#e7e9ea',
+            '#70777c', '#bfc4c7', '#8c9297', '#d0d3d5'
         ];
 
         for (let i = 0; i < 120; i++) {

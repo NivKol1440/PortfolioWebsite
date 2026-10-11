@@ -11,24 +11,24 @@
 }
 
 :root {
-    --bg-primary: #0a0a0f;
+    --bg-primary: #17191b;
     --bg-surface: rgba(255, 255, 255, 0.04);
     --bg-surface-hover: rgba(255, 255, 255, 0.08);
     --bg-glass: rgba(255, 255, 255, 0.06);
     --border-glass: rgba(255, 255, 255, 0.1);
-    --text-primary: #f0f0f5;
-    --text-secondary: rgba(240, 240, 245, 0.6);
-    --text-tertiary: rgba(240, 240, 245, 0.4);
-    --accent-1: #6366f1;  /* indigo */
-    --accent-2: #a855f7;  /* purple */
-    --accent-3: #ec4899;  /* pink */
-    --accent-4: #3b82f6;  /* blue */
-    --accent-gold: #fbbf24;
+    --text-primary: #e7e9ea;
+    --text-secondary: rgba(231, 233, 234, 0.68);
+    --text-tertiary: rgba(231, 233, 234, 0.44);
+    --accent-1: #aeb4b8;
+    --accent-2: #d0d3d5;
+    --accent-3: #7f858a;
+    --accent-4: #969ca1;
+    --accent-gold: #c4c8cb;
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-xl: 32px;
-    --shadow-glow: 0 0 80px rgba(99, 102, 241, 0.15);
+    --shadow-glow: 0 0 80px rgba(174, 180, 184, 0.15);
 }
 
 html {
@@ -165,12 +165,12 @@ body {
     top: 5px;
     height: calc(100% - 10px);
     border-radius: 46px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(168, 85, 247, 0.25));
+    background: linear-gradient(135deg, rgba(174, 180, 184, 0.35), rgba(208, 211, 213, 0.25));
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
-        0 0 20px rgba(99, 102, 241, 0.2),
-        0 0 40px rgba(99, 102, 241, 0.1);
+        0 0 20px rgba(174, 180, 184, 0.2),
+        0 0 40px rgba(174, 180, 184, 0.1);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 1;
 }
@@ -237,7 +237,7 @@ body {
     width: 600px;
     height: 600px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(174, 180, 184, 0.12) 0%, transparent 70%);
     pointer-events: none;
     animation: glowPulse 6s ease-in-out infinite;
 }
@@ -406,7 +406,7 @@ body {
 
 .venture-card:hover .venture-card-bg {
     background: var(--bg-surface-hover);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(174, 180, 184, 0.3);
 }
 
 .venture-card-content {
@@ -469,7 +469,7 @@ body {
 
 .skill-card:hover {
     background: var(--bg-surface-hover);
-    border-color: rgba(99, 102, 241, 0.25);
+    border-color: rgba(174, 180, 184, 0.25);
     transform: translateY(-4px);
 }
 
@@ -520,9 +520,9 @@ body {
     height: 800px;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle,
-        rgba(251, 191, 36, 0.1) 0%,
-        rgba(236, 72, 153, 0.08) 30%,
-        rgba(168, 85, 247, 0.05) 60%,
+        rgba(196, 200, 203, 0.1) 0%,
+        rgba(150, 156, 161, 0.08) 30%,
+        rgba(127, 133, 138, 0.05) 60%,
         transparent 80%
     );
     pointer-events: none;
@@ -569,7 +569,7 @@ body {
 }
 
 .birthday-word-accent {
-    background: linear-gradient(135deg, var(--accent-gold), #f97316, var(--accent-3), var(--accent-2));
+    background: linear-gradient(135deg, var(--accent-gold), #aeb4b8, var(--accent-3), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -715,7 +715,7 @@ body {
     z-index: 20;
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(99, 102, 241, 0.15);
+        0 0 30px rgba(174, 180, 184, 0.15);
 }
 
 @keyframes cardAppear {
@@ -827,7 +827,7 @@ body {
     transform: translateX(-50%);
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(150, 156, 161, 0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -963,7 +963,7 @@ body {
    SELECTION
    ══════════════════════════════════════ */
 ::selection {
-    background: rgba(99, 102, 241, 0.3);
+    background: rgba(174, 180, 184, 0.3);
     color: #fff;
 }
 
@@ -974,12 +974,12 @@ body {
 
 /* BMW Color Variables */
 .bmw-theme {
-    --bmw-blue: #0066B1;
-    --bmw-dark-blue: #003876;
-    --bmw-red: #E5001A;
-    --bmw-silver: #C0C0C0;
-    --bmw-carbon: #1a1a1a;
-    --bmw-white: #ffffff;
+    --bmw-blue: #aeb4b8;
+    --bmw-dark-blue: #62686d;
+    --bmw-red: #d6d9db;
+    --bmw-silver: #c0c4c7;
+    --bmw-carbon: #1a1c1e;
+    --bmw-white: #f1f2f3;
 }
 
 /* BMW Slideshow Background */
@@ -1011,24 +1011,24 @@ body {
     z-index: 1;
     background:
         linear-gradient(180deg,
-            rgba(10, 10, 15, 0.3) 0%,
-            rgba(10, 10, 15, 0.6) 30%,
-            rgba(10, 10, 15, 0.85) 70%,
-            rgba(10, 10, 15, 0.95) 100%
+            rgba(23, 25, 27, 0.3) 0%,
+            rgba(23, 25, 27, 0.6) 30%,
+            rgba(23, 25, 27, 0.85) 70%,
+            rgba(23, 25, 27, 0.95) 100%
         ),
         linear-gradient(90deg,
-            rgba(0, 102, 177, 0.08) 0%,
+            rgba(192, 196, 199, 0.08) 0%,
             transparent 50%,
-            rgba(229, 0, 26, 0.06) 100%
+            rgba(214, 217, 219, 0.06) 100%
         );
     pointer-events: none;
 }
 
 .bmw-glow {
     background: radial-gradient(circle,
-        rgba(0, 102, 177, 0.12) 0%,
-        rgba(28, 105, 212, 0.08) 30%,
-        rgba(229, 0, 26, 0.04) 60%,
+        rgba(192, 196, 199, 0.12) 0%,
+        rgba(174, 180, 184, 0.08) 30%,
+        rgba(214, 217, 219, 0.04) 60%,
         transparent 80%
     ) !important;
 }
@@ -1056,22 +1056,22 @@ body {
 
 .m-blue {
     flex: 1;
-    background: #0066B1;
+    background: #aeb4b8;
 }
 
 .m-darkblue {
     flex: 1;
-    background: #003876;
+    background: #62686d;
 }
 
 .m-red {
     flex: 1;
-    background: #E5001A;
+    background: #d6d9db;
 }
 
 /* BMW-themed birthday word accent */
 .bmw-theme .birthday-word-accent {
-    background: linear-gradient(135deg, #0066B1, #1C69D4, #E5001A, #fbbf24) !important;
+    background: linear-gradient(135deg, #aeb4b8, #d0d3d5, #7f858a, #c4c8cb) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -1080,18 +1080,26 @@ body {
 
 /* BMW-themed birthday name */
 .bmw-theme .birthday-name {
-    text-shadow: 0 0 40px rgba(0, 102, 177, 0.2);
+    text-shadow: 0 0 40px rgba(174, 180, 184, 0.2);
+}
+
+.bmw-theme .birthday-cake,
+.bmw-theme .birthday-stars,
+.bmw-theme .dedication-emoji,
+.bmw-theme .birthday-content,
+.music-icon {
+    filter: grayscale(1);
 }
 
 /* BMW-themed dedication card */
 .bmw-dedication {
-    border-color: rgba(0, 102, 177, 0.2) !important;
+    border-color: rgba(174, 180, 184, 0.2) !important;
 }
 
 .bmw-dedication .dedication-glow {
     background: radial-gradient(circle,
-        rgba(0, 102, 177, 0.12) 0%,
-        rgba(229, 0, 26, 0.06) 40%,
+        rgba(174, 180, 184, 0.12) 0%,
+        rgba(214, 217, 219, 0.06) 40%,
         transparent 70%
     ) !important;
 }
@@ -1100,12 +1108,12 @@ body {
 .bmw-theme .memory-card:hover {
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(0, 102, 177, 0.2) !important;
+        0 0 30px rgba(174, 180, 184, 0.2) !important;
 }
 
 /* BMW-themed loading spinner */
 .bmw-theme .loading-spinner {
-    border-top-color: #0066B1 !important;
+    border-top-color: #aeb4b8 !important;
 }
 
 
@@ -1287,8 +1295,8 @@ body {
     align-items: center;
     gap: 8px;
     padding: 10px 18px;
-    background: rgba(0, 102, 177, 0.2);
-    border: 1px solid rgba(0, 102, 177, 0.3);
+    background: rgba(174, 180, 184, 0.2);
+    border: 1px solid rgba(174, 180, 184, 0.3);
     border-radius: 50px;
     color: #fff;
     font-family: 'Inter', sans-serif;
@@ -1301,7 +1309,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    box-shadow: 0 8px 32px rgba(0, 102, 177, 0.15);
+    box-shadow: 0 8px 32px rgba(174, 180, 184, 0.15);
 }
 
 .music-control.visible {
@@ -1311,10 +1319,10 @@ body {
 }
 
 .music-control:hover {
-    background: rgba(0, 102, 177, 0.35);
-    border-color: rgba(0, 102, 177, 0.5);
+    background: rgba(174, 180, 184, 0.35);
+    border-color: rgba(174, 180, 184, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 102, 177, 0.25);
+    box-shadow: 0 12px 40px rgba(174, 180, 184, 0.25);
 }
 
 .music-icon {
@@ -1361,21 +1369,37 @@ body {
 
 /* Warm portfolio styling adapted from the Koloth Groups Site stylesheet. */
 body:has(#page-home.active) {
-    --home-ink: #111111;
-    --home-muted: #6a6864;
-    --home-paper: #f7f5f0;
-    --home-panel: #ece9e1;
-    --home-line: rgba(17, 17, 17, 0.15);
-    --home-accent: #fa5e36;
-    --home-acid: #d8fb67;
+    --home-ink: #232629;
+    --home-muted: #62686d;
+    --home-paper: #d4d7d9;
+    --home-panel: #c4c8cb;
+    --home-line: rgba(35, 38, 41, 0.18);
+    --home-accent: #70777c;
+    --home-acid: #aeb4b8;
     background: var(--home-paper);
     color: var(--home-ink);
     font-family: "Manrope", sans-serif;
+    --cursor-x: 50vw;
+    --cursor-y: 50vh;
 }
 
 body:has(#page-home.active) #ambientCanvas,
 body:has(#page-home.active) #particles {
     display: none;
+}
+
+body:has(#page-home.active)::before {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    background: radial-gradient(
+        360px circle at var(--cursor-x) var(--cursor-y),
+        rgba(112, 119, 124, 0.2),
+        rgba(192, 196, 199, 0.16) 35%,
+        transparent 72%
+    );
+    content: "";
+    pointer-events: none;
 }
 
 #page-home.active {
@@ -1398,8 +1422,8 @@ body:has(#page-home.active) #particles {
 #page-home .hero-glow {
     background: radial-gradient(
         circle,
-        rgba(216, 251, 103, 0.24) 0%,
-        rgba(250, 94, 54, 0.1) 42%,
+        rgba(192, 196, 199, 0.24) 0%,
+        rgba(112, 119, 124, 0.1) 42%,
         transparent 72%
     );
 }
@@ -1428,20 +1452,29 @@ body:has(#page-home.active) #particles {
 #page-home .hero-profile-image {
     width: clamp(180px, 25vw, 300px);
     aspect-ratio: 1;
-    border: 8px solid rgba(255, 255, 255, 0.78);
+    border: 8px solid rgba(241, 242, 243, 0.78);
     border-radius: 50%;
-    box-shadow: 0 24px 60px -26px rgba(17, 17, 17, 0.45);
+    box-shadow: 0 24px 60px -26px rgba(35, 38, 41, 0.45);
     object-fit: cover;
 }
 
 #page-home .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
     color: var(--home-muted);
-    background: rgba(236, 233, 225, 0.7);
+    background: rgba(196, 200, 203, 0.7);
     border-color: var(--home-line);
     font-family: "DM Mono", monospace;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+#page-home .hero-brand-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 #page-home .hero-name {
@@ -1508,11 +1541,11 @@ body:has(#page-home.active) #particles {
 }
 
 #page-home .venture-card:hover {
-    box-shadow: 0 24px 50px -24px rgba(17, 17, 17, 0.32);
+    box-shadow: 0 24px 50px -24px rgba(35, 38, 41, 0.32);
 }
 
 #page-home .venture-card-bg {
-    background: rgba(236, 233, 225, 0.72);
+    background: rgba(196, 200, 203, 0.72);
     border-color: var(--home-line);
     border-radius: 8px;
     backdrop-filter: none;
@@ -1520,7 +1553,7 @@ body:has(#page-home.active) #particles {
 
 #page-home .venture-card:hover .venture-card-bg {
     background: var(--home-panel);
-    border-color: rgba(250, 94, 54, 0.4);
+    border-color: rgba(112, 119, 124, 0.4);
 }
 
 #page-home .venture-card-content {
@@ -1569,7 +1602,7 @@ body:has(#page-home.active) #particles {
 }
 
 #page-home .skill-card {
-    background: rgba(236, 233, 225, 0.72);
+    background: rgba(196, 200, 203, 0.72);
     border-color: var(--home-line);
     border-radius: 8px;
     backdrop-filter: none;
@@ -1577,8 +1610,8 @@ body:has(#page-home.active) #particles {
 
 #page-home .skill-card:hover {
     background: var(--home-panel);
-    border-color: rgba(250, 94, 54, 0.4);
-    box-shadow: 0 18px 40px -24px rgba(17, 17, 17, 0.3);
+    border-color: rgba(112, 119, 124, 0.4);
+    box-shadow: 0 18px 40px -24px rgba(35, 38, 41, 0.3);
 }
 
 body:has(#page-home.active) .liquid-tab-bar {
@@ -1586,14 +1619,14 @@ body:has(#page-home.active) .liquid-tab-bar {
 }
 
 body:has(#page-home.active) .tab-bar-bg {
-    background: rgba(247, 245, 240, 0.88);
+    background: rgba(212, 215, 217, 0.92);
     border-color: var(--home-line);
-    box-shadow: 0 8px 32px rgba(17, 17, 17, 0.12);
+    box-shadow: 0 8px 32px rgba(35, 38, 41, 0.12);
 }
 
 body:has(#page-home.active) .tab-indicator {
-    background: rgba(250, 94, 54, 0.16);
-    border-color: rgba(250, 94, 54, 0.25);
+    background: rgba(112, 119, 124, 0.16);
+    border-color: rgba(112, 119, 124, 0.25);
     box-shadow: none;
 }
 
@@ -1610,6 +1643,23 @@ body:has(#page-home.active) .tab-btn.active {
 body:has(#page-home.active) ::selection {
     background: var(--home-acid);
     color: var(--home-ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body:has(#page-home.active)::before {
+        background: radial-gradient(
+            360px circle at var(--cursor-x) var(--cursor-y),
+            rgba(112, 119, 124, 0.2),
+            rgba(192, 196, 199, 0.16) 35%,
+            transparent 72%
+        );
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(#page-home.active)::before {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1655,5 +1705,163 @@ body:has(#page-home.active) ::selection {
     #page-home .skills-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+}
+
+/* Technical grid and framed profile layout inspired by konnoth.com. */
+body:has(#page-home.active) {
+    background-image:
+        linear-gradient(rgba(35, 38, 41, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(35, 38, 41, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+#page-home .portfolio-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1.75rem;
+    min-height: 0;
+    margin-top: clamp(2rem, 6vh, 4.5rem);
+    padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 7vw, 5rem);
+    overflow: hidden;
+    border: 1px solid rgba(208, 211, 213, 0.24);
+    border-radius: 28px;
+    background-color: #222629;
+    background-image:
+        linear-gradient(rgba(231, 233, 234, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(231, 233, 234, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 0%, rgba(174, 180, 184, 0.16), transparent 65%);
+    background-size: 44px 44px, 44px 44px, auto;
+    box-shadow: 0 28px 70px -42px rgba(23, 25, 27, 0.72);
+    text-align: center;
+}
+
+#page-home .hero-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-home .hero-profile {
+    z-index: 2;
+    order: -1;
+    color: rgba(231, 233, 234, 0.68);
+}
+
+#page-home .hero-profile:hover {
+    color: #f1f2f3;
+}
+
+#page-home .hero-profile-image {
+    width: clamp(160px, 20vw, 232px);
+    border: 9px solid #3b4044;
+    outline: 1px solid rgba(208, 211, 213, 0.34);
+    outline-offset: 5px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+}
+
+#page-home .hero-badge {
+    color: rgba(231, 233, 234, 0.76);
+    background: rgba(231, 233, 234, 0.08);
+    border-color: rgba(231, 233, 234, 0.16);
+}
+
+#page-home .hero-name,
+#page-home .name-first {
+    color: #f1f2f3;
+}
+
+#page-home .name-last {
+    color: #aeb4b8;
+}
+
+#page-home .hero-tagline {
+    color: #c4c8cb;
+}
+
+#page-home .hero-divider {
+    margin-right: auto;
+    margin-left: auto;
+    background: linear-gradient(90deg, #70777c, #d0d3d5, #70777c);
+}
+
+#page-home .hero-description {
+    color: rgba(231, 233, 234, 0.72);
+}
+
+#page-home .hero-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+}
+
+#page-home .hero-social-links a {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(231, 233, 234, 0.18);
+    border-radius: 999px;
+    background: rgba(231, 233, 234, 0.07);
+    color: #e7e9ea;
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    text-decoration: none;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+#page-home .hero-social-links a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(208, 211, 213, 0.5);
+    background: rgba(231, 233, 234, 0.14);
+    color: #fff;
+}
+
+#page-home .hero-social-links a:focus-visible {
+    outline: 2px solid #d0d3d5;
+    outline-offset: 3px;
+}
+
+#page-home .hero-social-links svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+#page-home .portfolio-section {
+    position: relative;
+    z-index: 2;
+}
+
+#page-home .venture-card,
+#page-home .skill-card {
+    border-radius: 16px;
+    border-color: rgba(35, 38, 41, 0.16);
+}
+
+#page-home .venture-card-bg {
+    background: rgba(196, 200, 203, 0.78);
+}
+
+#page-home .venture-card:hover .venture-card-bg,
+#page-home .skill-card:hover {
+    border-color: rgba(98, 104, 109, 0.5);
+}
+
+@media (max-width: 768px) {
+    #page-home .portfolio-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        min-height: 0;
+        margin-top: 1.5rem;
+        padding: 2.5rem 1.25rem;
+        border-radius: 22px;
     }
 }
