@@ -2013,6 +2013,41 @@ body:has(#page-shop.active) #particles {
     outline-offset: 3px;
 }
 
+.pdf-page {
+    position: relative;
+    z-index: 2;
+    width: min(1216px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 6rem 0 2rem;
+}
+
+.pdf-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-heading h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.pdf-heading a {
+    color: var(--text-primary);
+}
+
+.pdf-viewer {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 10rem);
+    min-height: 480px;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    background: #fff;
+}
+
 #page-shop.active {
     width: min(1216px, calc(100% - 48px));
     max-width: none;
@@ -2267,6 +2302,16 @@ body:has(#page-shop.active) #particles {
 }
 
 @media (max-width: 768px) {
+    .pdf-page {
+        width: min(100% - 32px, 1216px);
+        padding-top: 5rem;
+    }
+
+    .pdf-viewer {
+        height: calc(100vh - 9rem);
+        min-height: 400px;
+    }
+
     #page-shop.active {
         width: min(100% - 32px, 1216px);
         padding-top: 6rem;

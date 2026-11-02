@@ -1,6 +1,6 @@
 import os
 import io
-from flask import Flask, render_template, send_file, jsonify, abort
+from flask import Flask, render_template, send_file, jsonify, abort, redirect
 
 app = Flask(__name__)
 
@@ -18,7 +18,20 @@ def home():
 
 @app.route('/shop')
 def shop():
-    return render_template('index.html', active_tab='shop')
+    return redirect('https://shop.kolothgroup.com')
+
+
+@app.route('/pdf')
+def pdf():
+    return render_template('pdf.html', active_tab='pdf')
+
+
+@app.route('/pdf/file')
+def pdf_file():
+    pdf_path = os.path.join(app.root_path, 'pdf.pdf')
+    if not os.path.isfile(pdf_path):
+        abort(404)
+    return send_file(pdf_path, mimetype='application/pdf', as_attachment=False)
 
 
 @app.route('/favicon.ico')
@@ -93,4 +106,4 @@ def bmw_theme_images():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host='0.0.0.0', port=1440)

@@ -24,6 +24,7 @@
     <nav class="site-nav" aria-label="Main navigation">
         <a href="{{ url_for('home') }}" {% if active_tab == 'home' %}aria-current="page"{% endif %}>Portfolio</a>
         <a href="{{ url_for('shop') }}" {% if active_tab == 'shop' %}aria-current="page"{% endif %}>Shop</a>
+        <a href="{{ url_for('pdf') }}">PDF</a>
     </nav>
 
     <!-- ═══════ TAB CONTENT PAGES ═══════ -->
