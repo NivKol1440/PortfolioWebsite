@@ -45,6 +45,119 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background:
+        radial-gradient(ellipse at 50% 42%, rgba(174, 180, 184, 0.13), transparent 38%),
+        #17191b;
+    opacity: 1;
+    transition: opacity 450ms ease, visibility 450ms ease;
+}
+
+.loading-screen.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-card {
+    display: flex;
+    width: min(100%, 360px);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.loading-mark {
+    display: grid;
+    width: 76px;
+    height: 76px;
+    place-items: center;
+    margin-bottom: 1.35rem;
+    border: 1px solid rgba(231, 233, 234, 0.15);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 0 50px rgba(174, 180, 184, 0.12);
+    animation: loadingMarkFloat 2.4s ease-in-out infinite;
+}
+
+.loading-mark img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.loading-brand {
+    color: var(--text-tertiary);
+    font-family: "DM Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+}
+
+.loading-title {
+    margin-top: 0.65rem;
+    color: var(--text-primary);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.15rem, 4vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+}
+
+.loading-title span {
+    color: #aeb4b8;
+}
+
+.loading-progress {
+    width: 150px;
+    height: 3px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border-radius: 999px;
+    background: rgba(231, 233, 234, 0.1);
+}
+
+.loading-progress span {
+    display: block;
+    width: 42%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #777e83, #e7e9ea);
+    animation: loadingProgress 1.35s ease-in-out infinite;
+}
+
+.loading-caption {
+    margin-top: 0.8rem;
+    color: var(--text-tertiary);
+    font-size: 0.75rem;
+}
+
+@keyframes loadingMarkFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes loadingProgress {
+    0% { transform: translateX(-110%); }
+    100% { transform: translateX(250%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-mark,
+    .loading-progress span {
+        animation: none;
+    }
+
+    .loading-screen {
+        transition-duration: 0.01ms;
+    }
+}
+
 
 /* ── AMBIENT BACKGROUND CANVAS ── */
 #ambientCanvas {

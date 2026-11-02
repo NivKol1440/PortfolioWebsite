@@ -12,8 +12,11 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('favicon') }}?v=6">
     <link rel="shortcut icon" href="{{ url_for('favicon') }}?v=6">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='loading.js') }}" defer></script>
 </head>
 <body>
+
+    {% include 'loading_screen.html' %}
 
     <!-- ═══════ AMBIENT BACKGROUND CANVAS ═══════ -->
     <canvas id="ambientCanvas"></canvas>

@@ -7,8 +7,11 @@
     <meta name="description" content="View the PDF document in your browser.">
     <link rel="icon" type="image/x-icon" href="{{ url_for('favicon') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='loading.js') }}" defer></script>
 </head>
 <body>
+    {% include 'loading_screen.html' %}
+
     <nav class="site-nav" aria-label="Main navigation">
         <a href="{{ url_for('home') }}">Portfolio</a>
         <a href="{{ url_for('pdf') }}" aria-current="page">PDF</a>
