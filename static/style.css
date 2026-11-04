@@ -2139,41 +2139,6 @@ body:has(#page-shop.active) #particles {
     outline-offset: 3px;
 }
 
-.pdf-page {
-    position: relative;
-    z-index: 2;
-    width: min(1216px, calc(100% - 48px));
-    margin: 0 auto;
-    padding: 6rem 0 2rem;
-}
-
-.pdf-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.pdf-heading h1 {
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-}
-
-.pdf-heading a {
-    color: var(--text-primary);
-}
-
-.pdf-viewer {
-    display: block;
-    width: 100%;
-    height: calc(100vh - 10rem);
-    min-height: 480px;
-    border: 1px solid var(--border-glass);
-    border-radius: var(--radius-md);
-    background: #fff;
-}
-
 #page-shop.active {
     width: min(1216px, calc(100% - 48px));
     max-width: none;
@@ -2428,16 +2393,6 @@ body:has(#page-shop.active) #particles {
 }
 
 @media (max-width: 768px) {
-    .pdf-page {
-        width: min(100% - 32px, 1216px);
-        padding-top: 5rem;
-    }
-
-    .pdf-viewer {
-        height: calc(100vh - 9rem);
-        min-height: 400px;
-    }
-
     #page-shop.active {
         width: min(100% - 32px, 1216px);
         padding-top: 6rem;
@@ -2506,10 +2461,6 @@ body:has(#page-shop.active) #particles {
     #page-home.active,
     #page-shop.active {
         padding-bottom: calc(9rem + env(safe-area-inset-bottom));
-    }
-
-    .pdf-page {
-        padding-bottom: calc(7rem + env(safe-area-inset-bottom));
     }
 
     .music-control {
@@ -2637,5 +2588,134 @@ body:has(#page-shop.active) #particles {
 @media (max-width: 480px) {
     #page-home .venture-description-panel {
         width: min(270px, calc(100vw - 3rem));
+    }
+}
+
+.privacy-banner {
+    position: fixed;
+    z-index: 1500;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    max-width: 920px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(35, 38, 41, 0.2);
+    border-radius: 12px;
+    background: rgba(241, 242, 243, 0.98);
+    box-shadow: 0 16px 48px rgba(35, 38, 41, 0.2);
+    color: #232629;
+}
+
+.privacy-banner[hidden] {
+    display: none;
+}
+
+.privacy-banner h2 {
+    margin-bottom: 0.3rem;
+    font: 700 0.95rem "Manrope", sans-serif;
+}
+
+.privacy-banner p {
+    color: #62686d;
+    font-size: 0.74rem;
+    line-height: 1.5;
+}
+
+.privacy-banner .privacy-error {
+    margin-top: 0.4rem;
+    color: #9c2929;
+}
+
+.privacy-banner .privacy-status {
+    margin-top: 0.4rem;
+    color: #9c2929;
+}
+
+.privacy-name-label {
+    display: block;
+    margin-top: 0.65rem;
+    color: #41474b;
+    font: 700 0.72rem "Manrope", sans-serif;
+}
+
+.privacy-name-input {
+    width: min(100%, 20rem);
+    min-height: 38px;
+    margin-top: 0.3rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(35, 38, 41, 0.24);
+    border-radius: 6px;
+    background: #fff;
+    color: #232629;
+    font: 400 0.8rem "Inter", sans-serif;
+}
+
+.privacy-name-input:focus-visible {
+    outline: 2px solid #70777c;
+    outline-offset: 2px;
+}
+
+.privacy-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.privacy-choice-button,
+.privacy-settings {
+    border: 1px solid rgba(35, 38, 41, 0.2);
+    border-radius: 999px;
+    background: #232629;
+    color: #f1f2f3;
+    cursor: pointer;
+    font: 700 0.72rem "Manrope", sans-serif;
+}
+
+.privacy-choice-button {
+    padding: 0.65rem 0.85rem;
+}
+
+.privacy-choice-secondary {
+    background: #fff;
+    color: #41474b;
+}
+
+.privacy-choice-button:focus-visible,
+.privacy-settings:focus-visible {
+    outline: 2px solid #70777c;
+    outline-offset: 3px;
+}
+
+.privacy-settings {
+    position: fixed;
+    z-index: 1200;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.55rem 0.75rem;
+    background: #f1f2f3;
+    color: #41474b;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .privacy-banner {
+        bottom: calc(76px + env(safe-area-inset-bottom));
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .privacy-settings {
+        bottom: calc(76px + env(safe-area-inset-bottom));
+    }
+
+    .privacy-actions {
+        justify-content: flex-end;
     }
 }

@@ -5,6 +5,7 @@ __pycache__/
 .venv/
 venv/
 *.egg-info/
+instance/
 
 # HEIC cache (generated at runtime)
 .cache/
