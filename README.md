@@ -1,6 +1,6 @@
 # kolothgroup
 
-Portfolio website for **Nivedh Koloth Shijan** — built with Flask, featuring a BMW-themed birthday Surprise page dedicated to Shijan Koloth.
+Portfolio website for **Nivedh Koloth Shijan** — built with Flask, **You can build your own Website too... Learn how to below!**
 
 ## Features
 
